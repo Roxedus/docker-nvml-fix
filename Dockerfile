@@ -19,7 +19,7 @@ RUN \
 	make TARGET_VER=$driver_version && \
 	dpkg-divert --add --local --divert /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1.orig --rename /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1  && \
 	make install libdir=/usr/lib/x86_64-linux-gnu TARGET=libnvidia-ml.so && \
-	sudo apt-get remove -y \
+	apt-get remove -y \
 		make \
 		build-essential \
 		nvidia-cuda-dev
