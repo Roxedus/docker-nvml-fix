@@ -1,4 +1,4 @@
-FROM amd65/ubuntu
+FROM amd64/ubuntu
 
 MAINTAINER si0972
 
