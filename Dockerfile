@@ -1,6 +1,6 @@
 FROM amd64/ubuntu
 
-MAINTAINER si0972
+LABEL maintainer="si0972"
 
 ENV driver_version=410.78
 
