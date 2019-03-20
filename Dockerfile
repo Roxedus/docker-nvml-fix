@@ -5,22 +5,20 @@ LABEL maintainer="si0972"
 ENV driver_version=410.78
 
 RUN \
-	apt-get update && \
-	apt-get install -y --no-install-recommends \
+	apt-get update && apt-get install -y --no-install-recommends \
 		git \
 		make \
 		ca-certificates \
 		curl\
-		build-essential \
-		nvidia-cuda-dev && \
+		build-essential && \
 	git clone https://github.com/CFSworks/nvml_fix.git /tmp && \
 	cd /tmp && \
 	make TARGET_VER=$driver_version && \
 	dpkg-divert --add --local --divert /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1.orig --rename /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1  && \
 	make install libdir=/usr/lib/x86_64-linux-gnu TARGET=libnvidia-ml.so && \
-	apt-get remove -y \
+	apt-get remove --auto-remove -y \
 		make \
 		build-essential \
-		nvidia-cuda-dev
+		git
 		
 CMD ["watch nvidia-smi"]
