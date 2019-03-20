@@ -13,9 +13,8 @@ RUN \
 		curl\
 		build-essential \
 		nvidia-cuda-dev && \
+	git clone https://github.com/CFSworks/nvml_fix.git /tmp && \
 	cd /tmp && \
-	git clone https://github.com/CFSworks/nvml_fix.git && \
-	cd /tmp/nvml_fix && \
 	make TARGET_VER=$driver_version && \
 	dpkg-divert --add --local --divert /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1.orig --rename /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.1  && \
 	make install libdir=/usr/lib/x86_64-linux-gnu TARGET=libnvidia-ml.so && \
