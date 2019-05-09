@@ -2,7 +2,7 @@ FROM amd64/ubuntu
 
 LABEL maintainer="si0972"
 
-ENV driver_version=418.43
+ENV driver_version=418.56
 
 RUN \
 	apt-get update && apt-get install -y --no-install-recommends \
