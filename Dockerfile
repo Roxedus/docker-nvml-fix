@@ -1,6 +1,6 @@
 FROM amd64/ubuntu
 
-LABEL maintainer="si0972"
+LABEL maintainer="Roxedus"
 
 ENV driver_version=418.56
 
