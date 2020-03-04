@@ -2,7 +2,7 @@ FROM amd64/ubuntu
 
 LABEL maintainer="Roxedus"
 
-ENV driver_version=418.56
+ENV driver_version=440.44
 
 RUN \
 	apt-get update && apt-get install -y --no-install-recommends \
